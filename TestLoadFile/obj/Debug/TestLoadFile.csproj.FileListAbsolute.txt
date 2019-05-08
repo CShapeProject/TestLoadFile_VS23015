@@ -1,0 +1,6 @@
+E:\TestCShape\TestLoadFileFromServer\TestLoadFile\TestLoadFile\bin\Debug\TestLoadFile.exe.config
+E:\TestCShape\TestLoadFileFromServer\TestLoadFile\TestLoadFile\bin\Debug\TestLoadFile.exe
+E:\TestCShape\TestLoadFileFromServer\TestLoadFile\TestLoadFile\bin\Debug\TestLoadFile.pdb
+E:\TestCShape\TestLoadFileFromServer\TestLoadFile\TestLoadFile\obj\Debug\TestLoadFile.csprojResolveAssemblyReference.cache
+E:\TestCShape\TestLoadFileFromServer\TestLoadFile\TestLoadFile\obj\Debug\TestLoadFile.exe
+E:\TestCShape\TestLoadFileFromServer\TestLoadFile\TestLoadFile\obj\Debug\TestLoadFile.pdb

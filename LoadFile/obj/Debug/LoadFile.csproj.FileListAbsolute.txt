@@ -1,0 +1,9 @@
+E:\TestCShape\TestLoadFileFromServer\TestLoadFile\LoadFile\bin\Debug\LoadFile.exe.config
+E:\TestCShape\TestLoadFileFromServer\TestLoadFile\LoadFile\bin\Debug\LoadFile.exe
+E:\TestCShape\TestLoadFileFromServer\TestLoadFile\LoadFile\bin\Debug\LoadFile.pdb
+E:\TestCShape\TestLoadFileFromServer\TestLoadFile\LoadFile\obj\Debug\LoadFile.csprojResolveAssemblyReference.cache
+E:\TestCShape\TestLoadFileFromServer\TestLoadFile\LoadFile\obj\Debug\LoadFile.Properties.Resources.resources
+E:\TestCShape\TestLoadFileFromServer\TestLoadFile\LoadFile\obj\Debug\LoadFile.csproj.GenerateResource.Cache
+E:\TestCShape\TestLoadFileFromServer\TestLoadFile\LoadFile\obj\Debug\LoadFile.exe
+E:\TestCShape\TestLoadFileFromServer\TestLoadFile\LoadFile\obj\Debug\LoadFile.pdb
+E:\TestCShape\TestLoadFileFromServer\TestLoadFile\LoadFile\obj\Debug\LoadFile.Form1.resources
