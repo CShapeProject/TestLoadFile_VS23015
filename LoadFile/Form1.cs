@@ -19,15 +19,50 @@ namespace LoadFile
 
         private void loadBt_Click(object sender, EventArgs e)
         {
-            DownLoadFile();
+            DownLoadZipFile();
         }
 
         WebClient m_WebClient;
+        public class FileData
+        {
+            /// <summary>
+            /// 下载文件路径.
+            /// </summary>
+            public string pathLoad = "";
+            /// <summary>
+            /// 压缩文件名称.
+            /// </summary>
+            public string zipFileName = "";
+            /// <summary>
+            /// 解压缩文件夹名称.
+            /// </summary>
+            public string zipedfolder = "";
+            public FileData(string pathLoad, string zipFileName)
+            {
+                this.pathLoad = pathLoad;
+                this.zipFileName = zipFileName;
+                zipedfolder = Application.StartupPath;
+            }
+        }
+        public FileData m_FileData;
+
         void Init()
         {
             SetActiveUI(false);
             progressInfoLb.Text = "";
+
+            //本机文件下载路径.
+            //string path = "G:/a.docx";
+            //string path = "G:/";
+            //外网下载文件地址.
+            //string path = "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1494677827304&di=8e8aaf1a717ae37b73b772ee4728c7ea&imgtype=0&src=http%3A%2F%2Fscimg.jb51.net%2Fallimg%2F141123%2F10-1411231F92W16.jpg";
+            //局域网下载文件地址.
+            string pathLoad = "\\\\SERVER\\TestLoadFile\\";
+            string fileName = "Test.zip";
+            m_FileData = new FileData(pathLoad, fileName);
             m_WebClient = new WebClient();
+            
+            //UnZipFile(); //test
         }
 
         void SetActiveUI(bool isActive)
@@ -46,17 +81,16 @@ namespace LoadFile
             }
         }
 
-        void DownLoadFile()
+        /// <summary>
+        /// 下载压缩包文件.
+        /// </summary>
+        void DownLoadZipFile()
         {
-            Console.Out.WriteLine("DownLoadFile...");
+            Console.Out.WriteLine("DownLoadZipFile...");
             SetActiveUI(true);
-            //本机文件下载路径.
-            //string url = "G:/a.docx";
-            //外网下载文件地址.
-            //string url = "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1494677827304&di=8e8aaf1a717ae37b73b772ee4728c7ea&imgtype=0&src=http%3A%2F%2Fscimg.jb51.net%2Fallimg%2F141123%2F10-1411231F92W16.jpg";
-            //局域网下载文件地址.
-            string url = "\\\\SERVER\\TestLoadFile\\Test.zip";
-            string fileName = "Test.zip";
+            string path = m_FileData.pathLoad;
+            string fileName = m_FileData.zipFileName;
+            string url = path + fileName;
             DownLoadFile(url, fileName);
         }
 
@@ -108,7 +142,35 @@ namespace LoadFile
                 //Console.Out.WriteLine("load file over!");
                 //MessageBox.Show("下载完成！");
                 progressInfoLb.Text = "下载完成！";
+                UnZipFile();
             }
+        }
+
+        /// <summary>
+        /// 解压下载的文件.
+        /// </summary>
+        void UnZipFile()
+        {
+            if (m_FileData == null)
+            {
+                return;
+            }
+            Console.Out.WriteLine("UnZipFile...");
+            progressInfoLb.Text = "解压文件...";
+
+            string fileName = m_FileData.zipedfolder + "\\" + m_FileData.zipFileName;
+            string zipedfolder = m_FileData.zipedfolder;
+            string msg = "";
+            ZipHelper.unZipFile(fileName, zipedfolder, ref msg);
+            progressInfoLb.Text = msg;
+            //Console.Out.WriteLine("UnZipFile -> msg == " + msg);
+            //MessageBox.Show("信息：" + msg);
+            //在解压完成之后覆盖本地游戏版号信息.
+        }
+
+        private void unzipBt_Click(object sender, EventArgs e)
+        {
+            UnZipFile();
         }
     }
 }

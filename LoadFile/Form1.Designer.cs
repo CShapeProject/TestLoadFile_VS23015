@@ -33,6 +33,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.progressLb = new System.Windows.Forms.Label();
             this.progressInfoLb = new System.Windows.Forms.Label();
+            this.unzipBt = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // loadBt
@@ -45,10 +46,10 @@
             this.loadBt.UseVisualStyleBackColor = true;
             this.loadBt.Click += new System.EventHandler(this.loadBt_Click);
             // 
-            // progressBar1
+            // progressBar
             // 
             this.progressBar.Location = new System.Drawing.Point(93, 111);
-            this.progressBar.Name = "progressBar1";
+            this.progressBar.Name = "progressBar";
             this.progressBar.Size = new System.Drawing.Size(587, 12);
             this.progressBar.TabIndex = 1;
             // 
@@ -79,11 +80,22 @@
             this.progressInfoLb.TabIndex = 4;
             this.progressInfoLb.Text = "正在下载文件";
             // 
+            // unzipBt
+            // 
+            this.unzipBt.Location = new System.Drawing.Point(349, 227);
+            this.unzipBt.Name = "unzipBt";
+            this.unzipBt.Size = new System.Drawing.Size(75, 23);
+            this.unzipBt.TabIndex = 5;
+            this.unzipBt.Text = "解压";
+            this.unzipBt.UseVisualStyleBackColor = true;
+            this.unzipBt.Click += new System.EventHandler(this.unzipBt_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 262);
+            this.Controls.Add(this.unzipBt);
             this.Controls.Add(this.progressInfoLb);
             this.Controls.Add(this.progressLb);
             this.Controls.Add(this.label1);
@@ -104,6 +116,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label progressLb;
         private System.Windows.Forms.Label progressInfoLb;
+        private System.Windows.Forms.Button unzipBt;
     }
 }
 
